@@ -3,14 +3,14 @@ quorumFlags:
   removeGenesisOnDelete: true
 
 cluster:
-  provider: local  # choose from: local | aws | azure
-  cloudNativeServices: false 
+  provider: aws  # choose from: local | aws | azure
+  cloudNativeServices: true 
 
 aws:
   # the aws cli commands uses the name 'quorum-sa' so only change this if you altered the name
   serviceAccountName: quorum-sa
   # the region you are deploying to
-  region: ap-southeast-2
+  region: eu-west-3
 
 azure:
   serviceAccountName: quorum-sa
@@ -36,7 +36,7 @@ rawGenesisConfig:
     gasLimit: '0x47b760'
     difficulty: '0x1'
     coinbase: '0x0000000000000000000000000000000000000000'
-    includeQuickStartAccounts: false # set to true if you would like to use the quorum-dev-quickstart test accounts. This setting will be forced false if cloudNativeServices is set to true which is assuming a prod environment
+    includeQuickStartAccounts: true # set to true if you would like to use the quorum-dev-quickstart test accounts. This setting will be forced false if cloudNativeServices is set to true which is assuming a prod environment
   blockchain:
     nodes:
       generate: true
